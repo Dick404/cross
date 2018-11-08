@@ -1,0 +1,45 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="pushAlertInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="tns:alertInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pushAlertInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="alertInfo">
+        <xs:sequence>
+            <xs:element name="areaCode" type="xs:string"/>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="originalID" type="xs:string"/>
+            <xs:element name="iPAddress" type="xs:string"/>
+            <xs:element name="alarmID" type="xs:string"/>
+            <xs:element name="alarmCate" type="xs:string"/>
+            <xs:element name="alarmType" type="xs:string"/>
+            <xs:element name="alarmLevel" type="xs:string"/>
+            <xs:element name="alarmContent" type="xs:string"/>
+            <xs:element name="alarmStatus" type="xs:string"/>
+            <xs:element name="firstTime" type="xs:string"/>
+            <xs:element name="endTime" type="xs:string"/>
+            <xs:element name="alarmCount" type="xs:string"/>
+            <xs:element name="closeTime" type="xs:string"/>
+            <xs:element name="orderID" type="xs:string"/>
+            <xs:element name="className" type="xs:string"/>
+            <xs:element name="scene" type="xs:string"/>
+            <xs:element name="time" type="xs:string"/>
+            <xs:element name="mainData" type="xs:string"/>
+            <xs:element name="sendto" type="xs:string"/>
+            <xs:element name="subject" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
