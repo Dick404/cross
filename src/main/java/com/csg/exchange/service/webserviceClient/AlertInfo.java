@@ -38,6 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="mainData" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="sendto" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="subject" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="platform" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="host" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -68,7 +70,9 @@ import javax.xml.bind.annotation.XmlType;
     "time",
     "mainData",
     "sendto",
-    "subject"
+    "subject",
+    "platform",
+    "host"
 })
 public class AlertInfo {
 
@@ -114,6 +118,10 @@ public class AlertInfo {
     protected String sendto;
     @XmlElement(namespace = "http://spring.io/guides/gs-producing-web-service", required = true)
     protected String subject;
+    @XmlElement(namespace = "http://spring.io/guides/gs-producing-web-service", required = true)
+    protected String platform;
+    @XmlElement(namespace = "http://spring.io/guides/gs-producing-web-service", required = true)
+    protected String host;
 
     /**
      * 获取areaCode属性的值。
@@ -619,4 +627,80 @@ public class AlertInfo {
         this.subject = value;
     }
 
+    /**
+     * 获取platform属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPlatform() {
+        return platform;
+    }
+
+    /**
+     * 设置platform属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPlatform(String value) {
+        this.platform = value;
+    }
+
+    /**
+     * 获取host属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHost() {
+        return host;
+    }
+
+    /**
+     * 设置host属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHost(String value) {
+        this.host = value;
+    }
+
+    @Override
+    public String toString() {
+        return "AlertInfo{" +
+                "areaCode='" + areaCode + '\'' +
+                ", id='" + id + '\'' +
+                ", originalID='" + originalID + '\'' +
+                ", ipAddress='" + ipAddress + '\'' +
+                ", alarmID='" + alarmID + '\'' +
+                ", alarmCate='" + alarmCate + '\'' +
+                ", alarmType='" + alarmType + '\'' +
+                ", alarmLevel='" + alarmLevel + '\'' +
+                ", alarmContent='" + alarmContent + '\'' +
+                ", alarmStatus='" + alarmStatus + '\'' +
+                ", firstTime='" + firstTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", alarmCount='" + alarmCount + '\'' +
+                ", closeTime='" + closeTime + '\'' +
+                ", orderID='" + orderID + '\'' +
+                ", className='" + className + '\'' +
+                ", scene='" + scene + '\'' +
+                ", time='" + time + '\'' +
+                ", mainData='" + mainData + '\'' +
+                ", sendto='" + sendto + '\'' +
+                ", subject='" + subject + '\'' +
+                ", platform='" + platform + '\'' +
+                ", host='" + host + '\'' +
+                '}';
+    }
 }

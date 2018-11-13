@@ -40,6 +40,8 @@
             <xs:element name="mainData" type="xs:string"/>
             <xs:element name="sendto" type="xs:string"/>
             <xs:element name="subject" type="xs:string"/>
+            <xs:element name="platform" type="xs:string"/>
+            <xs:element name="host" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

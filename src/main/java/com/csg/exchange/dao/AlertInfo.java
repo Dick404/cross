@@ -220,8 +220,8 @@ public class AlertInfo {
                 '}';
     }
 
-
-    public boolean equals(String check) {
+    @Override
+    public boolean equals(Object check) {
         return  Objects.equals(getAreaCode(), null) ||
                 Objects.equals(getId(), null) ||
                 Objects.equals(getOriginalID(), null) ||

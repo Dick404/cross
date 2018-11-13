@@ -1,14 +1,14 @@
 package com.csg.exchange.endpoint;
 
-import com.csg.exchange.service.webserviceClient.AlertInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import com.csg.exchange.repository.Repositories;
-import com.csg.exchange.service.webserviceClient.PushAlertInfoRequest;
+import com.csg.exchange.service.webserviceClient.AlertInfo;
 import com.csg.exchange.service.webserviceClient.PushAlertInfoResponse;
+import com.csg.exchange.service.webserviceClient.PushAlertInfoRequest;
 
 
 @Endpoint
@@ -29,10 +29,11 @@ public class Endpoints {
         AlertInfo info = new AlertInfo();
         try{
             AlertInfo alertInfo = request.getName();
-            response.setResult(Repositories.check(alertInfo));
+            System.out.print(alertInfo);
+            response.setResult(Repositories.sendData(alertInfo));
 
-        }catch (Exception e){
-            System.out.print(e);
+        }catch (Exception ex){
+            System.out.print(ex);
         }
 
         return response;
