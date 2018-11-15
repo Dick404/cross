@@ -29,7 +29,7 @@ public class Endpoints {
         AlertInfo info = new AlertInfo();
         try{
             AlertInfo alertInfo = request.getName();
-            System.out.print(alertInfo);
+            //System.out.println(alertInfo);
             response.setResult(Repositories.sendData(alertInfo));
 
         }catch (Exception ex){
