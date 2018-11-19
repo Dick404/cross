@@ -24,11 +24,12 @@ public class HttpRequestSenderImpl implements HttpRequestSender{
 
     @Contract(pure = true)
     public  boolean sendPost(String url, JSONObject info){
+
         HttpPost httppost = new HttpPost(url);
         CloseableHttpClient httpclient = HttpClients.createDefault();
         CloseableHttpResponse response = null;
         try {
-            StringEntity s = new StringEntity(info.toString());
+            StringEntity s = new StringEntity(info.toString(), "UTF-8");
             s.setContentEncoding("UTF-8");
             s.setContentType("application/json");//发送json数据需要设置contentType
             System.out.print(s.getContent());
